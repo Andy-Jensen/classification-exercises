@@ -30,7 +30,7 @@ def get_telco_data():
                 JOIN internet_service_types USING(internet_service_type_id)
                 JOIN payment_types USING(payment_type_id)
                 JOIN customer_signups USING(customer_id)
-                JOIN customer_churn USING(customer_id)
+                LEFT JOIN customer_churn USING(customer_id)
                 '''
         
         df = pd.read_sql(query, url)
